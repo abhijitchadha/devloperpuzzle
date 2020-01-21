@@ -3,13 +3,12 @@
   *ngIf="data.length > 0"
   [title]="chart.title"
   [type]="chart.type"
-  [data]="chartData"
   [data]="data"
   [columnNames]="chart.columnNames"
   [options]="chart.options"
 >
 </google-chart>
 <div *ngIf="data.length === 0">
-No error Found
+No Data Found
 </div>
 </div>

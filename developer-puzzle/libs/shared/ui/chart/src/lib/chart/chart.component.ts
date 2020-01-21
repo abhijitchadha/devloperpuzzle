@@ -3,8 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   Input,
-  OnInit,
-  OnDestroy
+  OnInit
 } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -13,7 +12,7 @@ import { Observable } from 'rxjs';
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css']
 })
-export class ChartComponent implements OnInit, OnDestroy {
+export class ChartComponent implements OnInit {
   @Input() data$: Observable<any>;
   chartData: any;
 
@@ -34,10 +33,5 @@ export class ChartComponent implements OnInit, OnDestroy {
       columnNames: ['period', 'close'],
       options: { title: `Stock price`, width: '600', height: '400' }
     };
-    this.data$.subscribe(newData => (this.chartData = newData));
   }
-  ngOnDestroy() {
-    this.chartData.unsubscribe();
-  }
-
 }
