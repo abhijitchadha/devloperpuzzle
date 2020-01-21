@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config apps/stocks/proxy.conf.json stockse",
     "serve:stocks": "ng serve stocks",
     "serve:stocks-api": "ng run stocks-api:serve",
     "build": "ng build",

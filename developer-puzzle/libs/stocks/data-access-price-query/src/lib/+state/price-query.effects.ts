@@ -26,7 +26,7 @@ import { Observable } from 'rxjs';
         run: (action: FetchPriceQuery, state: PriceQueryPartialState) => {
           const result: Observable<PriceQueryResponse[]> = this.httpClient
             .get<PriceQueryResponse[]>(
-              `${this.env.apiURL}/beta/stock/${action.symbol}/chart/${
+              `/beta/stock/${action.symbol}/chart/${
                 action.period
               }`
             );
