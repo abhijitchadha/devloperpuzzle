@@ -28,7 +28,7 @@ import { Observable } from 'rxjs';
             .get<PriceQueryResponse[]>(
               `${this.env.apiURL}/beta/stock/${action.symbol}/chart/${
                 action.period
-              }?token=${this.env.apiKey}`
+              }`
             );
 
             if(action.Fromdate && action.Todate){
