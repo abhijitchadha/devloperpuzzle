@@ -1,6 +1,6 @@
 Code review of Master branch.
 1. What is done well?
-	-- > NGRX and Façade pattern
+	-- > NX, NGRX and Façade pattern
     --> having components in lib makes application much more modular and can be used in other applications. 
     --> using Hapi server 
 2. What would you change?
