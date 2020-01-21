@@ -10,11 +10,11 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'coding-challenge-chart',
   templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css']
+  styleUrls: ['./chart.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChartComponent implements OnInit {
   @Input() data$: Observable<any>;
-  chartData: any;
 
   chart: {
     title: string;
@@ -33,7 +33,5 @@ export class ChartComponent implements OnInit {
       columnNames: ['period', 'close'],
       options: { title: `Stock price`, width: '600', height: '400' }
     };
-
-    this.data$.subscribe(newData => (this.chartData = newData));
   }
 }

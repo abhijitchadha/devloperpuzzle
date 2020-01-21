@@ -45,6 +45,11 @@ export function priceQueryReducer(
         selectedSymbol: action.symbol
       };
     }
+      case PriceQueryActionTypes.PriceQueryFetchError: {
+        return {
+          ...initialState
+        };
+    }
   }
   return state;
 }
