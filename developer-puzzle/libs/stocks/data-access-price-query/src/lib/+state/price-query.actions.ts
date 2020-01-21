@@ -25,7 +25,7 @@ export class PriceQueryFetched implements Action {
 
 export class SelectSymbol implements Action {
   readonly type = PriceQueryActionTypes.SelectSymbol;
-  constructor(public symbol: string, public period: string, public Fromdate?: string, public Todate?: string) {}
+  constructor(public symbol: string) {}
 }
 
 export type PriceQueryAction =
