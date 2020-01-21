@@ -14,6 +14,7 @@ export class StocksComponent implements OnInit {
   period: string;
   maxDate : Date = new Date();
   fromDate : Date;
+  displayCustom : Boolean = false;
 
   quotes$ = this.priceQuery.priceQueries$;
 intervals = [
@@ -45,6 +46,18 @@ intervals = [
       period: [null, Validators.required],
       Fromdate: [null],
       Todate: [null]
+    });
+    this.stockPickerForm.get('period').valueChanges.subscribe(val => {
+      if(val === 'custom')
+      {
+        this.displayCustom = true;
+      }
+      else
+      {
+        this.displayCustom = false;
+        this.stockPickerForm.controls["Fromdate"].reset();
+        this.stockPickerForm.controls["Todate"].reset();
+      }
     });
   }
 

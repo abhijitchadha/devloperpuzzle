@@ -20,7 +20,7 @@
 
   <mat-form-field>
     <mat-label>Favorite time period</mat-label>
-    <mat-select formControlName="period" [(ngModel)]="period"  (ngModelChange)="fetchQuote();" >
+    <mat-select formControlName="period" (ngModelChange)="fetchQuote();">
       <mat-option
         *ngFor="let timePeriod of timePeriods"
         [value]="timePeriod.value"
@@ -30,7 +30,7 @@
     </mat-select>
   </mat-form-field>
 
-<div *ngIf="period == 'custom'">
+<div *ngIf="displayCustom">
  <mat-form-field>
   <input matInput [(ngModel)]="fromDate" [max]="maxDate" [matDatepicker]="frompicker" formControlName="Fromdate" (dateChange)="dateValidation(); fetchQuote()" placeholder="From" >
   <mat-datepicker-toggle matSuffix [for]="frompicker"></mat-datepicker-toggle>
