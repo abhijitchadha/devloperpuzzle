@@ -32,12 +32,12 @@
 
 <div *ngIf="period == 'custom'">
  <mat-form-field>
-  <input matInput [(ngModel)]="fromDate" [max]="maxDate" [matDatepicker]="frompicker" formControlName="Fromdate" (dateChange)="fetchQuote()" placeholder="From" >
+  <input matInput [(ngModel)]="fromDate" [max]="maxDate" [matDatepicker]="frompicker" formControlName="Fromdate" (dateChange)="dateValidation(); fetchQuote()" placeholder="From" >
   <mat-datepicker-toggle matSuffix [for]="frompicker"></mat-datepicker-toggle>
   <mat-datepicker #frompicker ></mat-datepicker>
 </mat-form-field>
 <mat-form-field >
-  <input matInput [min]="fromDate" [max]="maxDate"  [matDatepicker]="topicker" formControlName="Todate" (dateChange)="fetchQuote()" placeholder="To" >
+  <input matInput [min]="fromDate" [max]="maxDate"  [matDatepicker]="topicker" formControlName="Todate" (dateChange)="dateValidation(); fetchQuote()" placeholder="To" >
   <mat-datepicker-toggle matSuffix [for]="topicker"></mat-datepicker-toggle>
   <mat-datepicker #topicker ></mat-datepicker>
 </mat-form-field>

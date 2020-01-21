@@ -46,22 +46,18 @@ intervals = [
       Fromdate: [null],
       Todate: [null]
     });
-    this.stockPickerForm.setValidators(this.dateValidation());
   }
 
   ngOnInit() {}
 
-  public dateValidation() : ValidatorFn {
-    return (group: FormGroup): ValidationErrors => {
+  dateValidation() {
     const controlFromdate = this.stockPickerForm.controls["Fromdate"];
     const controlTodate = this.stockPickerForm.controls["Todate"];
    if(controlFromdate.value && controlTodate.value && (controlFromdate.value > controlTodate.value))
    {
     controlFromdate.setValue(controlTodate.value);
    }
-   return;
    }
-  }
 
   fetchQuote() {
     if (this.stockPickerForm.valid) {
@@ -74,6 +70,8 @@ intervals = [
         {
            const formatedFormDate= formatDate(Fromdate ,'yyyy-MM-dd','en-us');
            const formatedTODate= formatDate(Todate ,'yyyy-MM-dd','en-us');
+           console.log(formatedFormDate);
+           console.log(formatedTODate);
           const periodrange = this.getPeriod(formatedFormDate);
           this.priceQuery.fetchQuote(symbol,periodrange,formatedFormDate,formatedTODate)
         }
