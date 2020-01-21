@@ -1,8 +1,8 @@
 <google-chart
-  *ngIf="this.data$ | async as data"
+  *ngIf="this.data$ | async as chartData"
   [title]="chart.title"
   [type]="chart.type"
-  [data]="data"
+  [data]="chartData"
   [columnNames]="chart.columnNames"
   [options]="chart.options"
 >
